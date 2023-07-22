@@ -1,4 +1,6 @@
-
+const rock = "rock";
+const paper= "paper";
+const scissors = "scissors";
 
 function getComputerChoice(values){
   
@@ -6,5 +8,5 @@ function getComputerChoice(values){
   
   
 }
-let values = ["rock","paper","scissors"];
+let values = [rock,paper,scissors];
 console.log(getComputerChoice(values));
