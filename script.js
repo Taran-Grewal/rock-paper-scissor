@@ -3,7 +3,7 @@ const paper= "paper";
 const scissors = "scissors";
 
 function playerSelection(){
-  prompt("choose rock paper or scissor")
+  let choose = prompt("choose rock paper or scissor")
 
 
 
