@@ -1,9 +1,11 @@
 const rock = "rock";
 const paper= "paper";
-const scissors = "scissors";
+const scissor = "scissor";
 
 function playerSelection(){
-  let choose = prompt("choose rock paper or scissor")
+  let choose = prompt("choose rock paper or scissor");
+  lowercase = choose.toLowerCase();
+  return lowercase;
 
 
 
@@ -17,27 +19,59 @@ function getComputerChoice(values){
 
 
 
-function playGround(playerSelection,computerSelection){
-  if(playerSelection == computerSelection){
-  return "draw";
+function playGround(playerChoice,computerSelection){
+  if(playerChoice == rock && computerSelection == rock){
+    return "DRAW";
+  
   }
-  else if(playerSelection==rock &&computerSelection==paper){
-    return "ou loose";
+  if(playerChoice ==paper&& computerSelection == paper){
+    return "DRAW";
+  
   }
-  else if(playerSelection==paper &&computerSelection==scissors){
-    return "ou loose";
+  if(playerChoice == scissor && computerSelection == scissor){
+    return "DRAW";
+  
+  }
+  else if(playerChoice==rock &&computerSelection==paper){
+   return "YOU LOOSE";
+    
+  }
+  else if(playerChoice==paper &&computerSelection==scissor){
+    return "YOU LOOSE";
 }
-else if(playerSelection==scissors &&computerSelection==rock){
-  return "ou loose";
+else if(playerChoice==scissor &&computerSelection==rock){
+  return "YOU LOOSE";
+}
+else if(playerChoice==rock &&computerSelection==scissor){
+  return "YOU WIN";
+}
+else if(playerChoice==scissor &&computerSelection==paper){
+  return "YOU WIN";
+}
+else if(playerChoice==paper &&computerSelection==rock){
+  return "YOU WIN";
 }
 else{
-  return "you win";
-}
+  return "NULL";
 }
 
-let values = [rock,paper,scissors];
-const computerSelection =getComputerChoice(values);
 
-console.log(getComputerChoice(values));
-console.log(playerSelection());
-console.log(playGround(playerSelection,computerSelection));
+
+
+}
+
+let values = [rock,paper,scissor];
+
+const computerSelection = getComputerChoice(values);
+const playerChoice = playerSelection();
+
+
+//console.log(getComputerChoice(values));
+console.log(computerSelection);
+console.log(playerChoice);
+
+console.log(playGround(playerChoice,computerSelection));
+
+
+
+//console.log(playerSelection());
