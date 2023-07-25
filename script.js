@@ -54,10 +54,9 @@ else if(playerChoice==paper &&computerSelection==rock){
 else{
   return "NULL";
 }
-
-
-
-
+}
+function game(){
+  
 }
 
 let values = [rock,paper,scissor];
