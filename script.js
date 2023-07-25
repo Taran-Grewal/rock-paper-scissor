@@ -6,6 +6,7 @@ function playerSelection(){
   let choose = prompt("choose rock paper or scissor");
   lowercase = choose.toLowerCase();
   return lowercase;
+  
 
 
 
@@ -20,6 +21,8 @@ function getComputerChoice(values){
 
 
 function playGround(playerChoice,computerSelection){
+  
+
   if(playerChoice == rock && computerSelection == rock){
     return "DRAW";
   
@@ -54,23 +57,39 @@ else if(playerChoice==paper &&computerSelection==rock){
 else{
   return "NULL";
 }
+
 }
-function game(){
-  
-}
+
+
 
 let values = [rock,paper,scissor];
+let playerScore = 0;
+let computerScore = 0;
 
-const computerSelection = getComputerChoice(values);
-const playerChoice = playerSelection();
+for (let i = 0; i < 5; i++) {
+let computerSelection = getComputerChoice(values);
+let playerChoice = playerSelection();
+
+let result = playGround(playerChoice, computerSelection);
+
+console.log(`Game ${i + 1}: You chose ${playerChoice}, Computer chose ${computerSelection}. Result: ${result}`);
+
+if (result === "YOU WIN") {
+  playerScore++;
+} else if (result === "YOU LOOSE") {
+  computerScore++;
+}
+}
 
 
-//console.log(getComputerChoice(values));
-console.log(computerSelection);
-console.log(playerChoice);
 
-console.log(playGround(playerChoice,computerSelection));
+//console.log(getComputerChoice(values))
 
 
+console.log(`Final Score: You ${playerScore} - ${computerScore} Computer`);
 
-//console.log(playerSelection());
+
+
+
+
+
